@@ -2,6 +2,18 @@ import React from 'react';
 import SongCard from './SongCard';
 import './PlaylistSection.css';
 
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const data = await getPlaylist(token);
+      setPlaylists(data);
+    } catch (error) {
+      setError("¡Error al cargar playlists! Intenta recargar.");
+    }
+  };
+  fetchData();
+}, [token]);
+
 const PlaylistSection = ({ title, songs }) => {
   return (
     <section className="playlist-section">

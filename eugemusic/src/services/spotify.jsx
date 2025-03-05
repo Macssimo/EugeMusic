@@ -39,3 +39,15 @@ const msToMinutes = (ms) => {
   const seconds = ((ms % 60000) / 1000).toFixed(0);
   return `${minutes}:${seconds.padStart(2, '0')}`;
 };
+
+export const refreshToken = async (refreshToken) => {
+  const response = await fetch('https://accounts.spotify.com/api/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
+    },
+    body: `grant_type=refresh_token&refresh_token=${refreshToken}`,
+  });
+  return response.json();
+};

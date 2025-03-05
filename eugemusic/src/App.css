@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .song-card {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  }
