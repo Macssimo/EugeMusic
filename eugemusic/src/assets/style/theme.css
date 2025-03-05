@@ -1,16 +1,29 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --primary-color: #1db954;
+  /* Colores base */
+  --primary-color: #1DB954;
+  --bg-header: rgba(18, 18, 18, 0.95);
+  --text-color: #ffffff;
+  
+  /* Breakpoints */
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+}
+
+body {
+  background-color: #121212;
+  color: var(--text-color);
+  padding-bottom: 80px; /* Para el footer fijo */
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 1rem;
   }
   
-  [data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #ffffff;
+  .player-controls button {
+    margin: 0 5px;
   }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Montserrat', sans-serif;
-  }
+}
